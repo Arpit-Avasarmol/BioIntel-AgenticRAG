@@ -12,7 +12,7 @@ returning an answer. Everything runs on a single GPU workstation with no API key
 
 ---
 
-Screencast from 2026-07-25 14-32-33.mp4
+[Screencast from 2026-07-25 14-32-33.mp4](https://github.com/Arpit-Avasarmol/BioIntel-AgenticRAG/blob/c2a48cb03e9ce0470fedb695ff58c0c019730378/Screencast%20from%202026-07-25%2014-32-33.mp4)
 
 ## Table of contents
 
