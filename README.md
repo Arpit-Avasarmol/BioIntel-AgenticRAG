@@ -106,6 +106,55 @@ Observability (opt-in profile): Langfuse (LLM traces) · OpenTelemetry → Jaege
 **Backing services** (docker-compose): PostgreSQL, Redis, MinIO, Qdrant, OpenSearch, and
 optionally Milvus (swap-in for Qdrant) and the observability stack.
 
+
+flowchart TB
+    subgraph clients [Clients]
+        CLI[biointel CLI]
+        UI[Streamlit UI :8501]
+        API[FastAPI :8000]
+    end
+
+    subgraph agent [LangGraph Agent]
+        plan[Plan sub-questions]
+        auto[Auto-ingest optional]
+        retrieve[Hybrid retrieve]
+        extract[Structured extract]
+        synth[Synthesize answer]
+        contra[Contradictions]
+        verify[Verify citations]
+        plan --> auto --> retrieve --> extract --> synth --> contra --> verify
+    end
+
+    subgraph stores [Data Stores]
+        PG[(PostgreSQL metadata)]
+        MINIO[(MinIO raw JSON)]
+        QD[(Qdrant vectors)]
+        OS[(OpenSearch BM25)]
+        REDIS[(Redis cache/rate-limit)]
+    end
+
+    subgraph external [External APIs]
+        PUB[PubMed/PMC]
+        CT[ClinicalTrials.gov]
+        CH[ChEMBL]
+        OT[Open Targets]
+        PV[PatentsView]
+    end
+
+    OLLAMA[Ollama LLM host :11434]
+
+    CLI --> agent
+    UI --> API --> agent
+    agent --> OLLAMA
+    auto --> external
+    auto --> PG
+    retrieve --> QD
+    retrieve --> OS
+    ingest --> PG
+    ingest --> MINIO
+    index --> QD
+    index --> OS
+
 ---
 
 ## 3. Where the data comes from & how to source it
