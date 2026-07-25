@@ -12,6 +12,8 @@ returning an answer. Everything runs on a single GPU workstation with no API key
 
 ---
 
+Screencast from 2026-07-25 14-32-33.mp4
+
 ## Table of contents
 
 1. [What it does](#1-what-it-does)
