@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+*.egg
+
+# Environment & secrets (never commit)
+.env
+.env.local
+*.pem
+credentials.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*~
+
+# Data & local artifacts
+.data/
+data/
+volumes/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Hugging Face / model caches (large)
+.cache/
