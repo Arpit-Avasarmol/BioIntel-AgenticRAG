@@ -1,0 +1,40 @@
+# =============================================================================
+# Model profile reference (documentation companion to MODEL_PROFILES in code).
+# Select via MODEL_PROFILE env var. Individual env vars override any field.
+#
+# All models are open-weights and run locally:
+#   - LLM        -> Ollama (host)      : `ollama pull <model>`
+#   - Embeddings -> sentence-transformers (in-process, downloaded from HF)
+#   - Reranker   -> FlagEmbedding cross-encoder (in-process, downloaded from HF)
+# =============================================================================
+
+profiles:
+  max:
+    description: "Best answer quality. Needs a 16GB+ VRAM GPU."
+    llm_model: "qwen2.5:14b-instruct"     # ~9-12 GB VRAM @ Q4
+    embedding_model: "BAAI/bge-large-en-v1.5"
+    embedding_dim: 1024
+    reranker_model: "BAAI/bge-reranker-v2-m3"
+    notes: "Default. OpenSearch also wants ~2-4GB RAM; plan for 32GB+ system RAM."
+
+  balanced:
+    description: "Strong quality, fits 8-12GB VRAM."
+    llm_model: "llama3.1:8b-instruct-q4_K_M"
+    embedding_model: "BAAI/bge-large-en-v1.5"
+    embedding_dim: 1024
+    reranker_model: "BAAI/bge-reranker-v2-m3"
+    notes: "Great default if you have a mid-range GPU."
+
+  lean:
+    description: "CPU-capable. Slower LLM on CPU but everything runs."
+    llm_model: "llama3.2:3b"
+    embedding_model: "BAAI/bge-small-en-v1.5"
+    embedding_dim: 384
+    reranker_model: "BAAI/bge-reranker-base"
+    notes: "Use EMBEDDING_DEVICE=cpu / RERANKER_DEVICE=cpu on machines without a GPU."
+
+# Convenience: exact `ollama pull` commands per profile.
+ollama_pull:
+  max: "ollama pull qwen2.5:14b-instruct"
+  balanced: "ollama pull llama3.1:8b-instruct-q4_K_M"
+  lean: "ollama pull llama3.2:3b"

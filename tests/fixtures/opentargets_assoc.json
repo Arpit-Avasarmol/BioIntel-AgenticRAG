@@ -1,0 +1,21 @@
+{
+  "disease_id": "EFO_0003767",
+  "disease_name": "inflammatory bowel disease",
+  "assoc": {
+    "target": {
+      "id": "ENSG00000113302",
+      "approvedSymbol": "IL12B",
+      "approvedName": "interleukin 12B"
+    },
+    "score": 0.8123,
+    "datatypeScores": [
+      { "id": "genetic_association", "score": 0.72 },
+      { "id": "known_drug", "score": 0.95 },
+      { "id": "literature", "score": 0.61 }
+    ]
+  },
+  "known_drugs": [
+    { "drug": { "id": "CHEMBL2109101", "name": "USTEKINUMAB", "isApproved": true }, "mechanismOfAction": "Interleukin-12/23 inhibitor" },
+    { "drug": { "id": "CHEMBL4297631", "name": "RISANKIZUMAB", "isApproved": true }, "mechanismOfAction": "Interleukin-23 inhibitor" }
+  ]
+}

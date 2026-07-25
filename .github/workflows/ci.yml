@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.11
+
+      - name: Create venv and install (project + dev extras)
+        # Heavy ML/runtime extras (torch, sentence-transformers, langgraph) are
+        # NOT needed: the offline test suite exercises pure logic + mocks, and
+        # the code lazy-imports heavy deps. This keeps CI fast and hermetic.
+        run: |
+          uv venv
+          uv pip install -e ".[dev]"
+          uv pip install fastapi "uvicorn[standard]" httpx
+
+      - name: Ruff lint
+        run: uv run ruff check .
+
+      - name: Ruff format check
+        run: uv run ruff format --check .
+
+      - name: Run tests (offline only)
+        run: uv run pytest -m "not integration" --cov=biointel --cov-report=term-missing
+
+      - name: Build sanity — import package + app
+        run: |
+          uv run python -c "import biointel; from biointel.api.app import app; print('import ok', biointel.__version__)"

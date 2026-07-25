@@ -1,0 +1,57 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT03000001",
+      "briefTitle": "Study of Risankizumab in Crohn's Disease",
+      "officialTitle": "A Phase 3 Study of Risankizumab (Anti-IL-23) for Induction of Remission in Moderate-to-Severe Crohn's Disease"
+    },
+    "statusModule": {
+      "overallStatus": "COMPLETED",
+      "startDateStruct": { "date": "2019-03" }
+    },
+    "descriptionModule": {
+      "briefSummary": "This study evaluates the efficacy and safety of risankizumab, an anti-IL-23 p19 monoclonal antibody, in patients with moderately to severely active Crohn's disease.",
+      "detailedDescription": "Participants receive intravenous induction dosing followed by subcutaneous maintenance. The primary endpoint is clinical remission at week 12."
+    },
+    "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": ["PHASE3"],
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "primaryPurpose": "TREATMENT",
+        "maskingInfo": { "masking": "QUADRUPLE" }
+      }
+    },
+    "armsInterventionsModule": {
+      "interventions": [
+        {
+          "type": "DRUG",
+          "name": "Risankizumab",
+          "description": "Anti-IL-23 p19 monoclonal antibody administered IV then SC."
+        },
+        {
+          "type": "DRUG",
+          "name": "Placebo",
+          "description": "Matching placebo."
+        }
+      ]
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion: adults with moderate-to-severe Crohn's disease. Exclusion: prior anti-IL-23 exposure.",
+      "sex": "ALL",
+      "minimumAge": "18 Years",
+      "maximumAge": "80 Years"
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        { "measure": "Clinical remission (CDAI < 150)", "timeFrame": "Week 12" }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": { "name": "AbbVie", "class": "INDUSTRY" }
+    },
+    "conditionsModule": {
+      "conditions": ["Crohn Disease"]
+    }
+  }
+}

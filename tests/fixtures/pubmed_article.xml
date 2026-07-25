@@ -1,0 +1,56 @@
+<PubmedArticle>
+  <MedlineCitation Status="MEDLINE">
+    <PMID Version="1">30001234</PMID>
+    <Article PubModel="Print">
+      <Journal>
+        <Title>Journal of Crohn's and Colitis</Title>
+        <JournalIssue>
+          <PubDate>
+            <Year>2018</Year>
+            <Month>Jun</Month>
+            <Day>15</Day>
+          </PubDate>
+        </JournalIssue>
+      </Journal>
+      <ArticleTitle>Ustekinumab targeting IL-23 in moderate-to-severe Crohn's disease: a randomized trial.</ArticleTitle>
+      <Abstract>
+        <AbstractText Label="BACKGROUND">Interleukin-23 (IL-23) is a key driver of mucosal inflammation in Crohn's disease.</AbstractText>
+        <AbstractText Label="METHODS">We randomized 300 patients to ustekinumab or placebo and measured clinical remission at week 44.</AbstractText>
+        <AbstractText Label="RESULTS">Clinical remission was achieved in 53% of ustekinumab-treated patients versus 36% of placebo (p&lt;0.01).</AbstractText>
+        <AbstractText Label="CONCLUSIONS">IL-23 blockade with ustekinumab is effective for maintenance of remission in Crohn's disease.</AbstractText>
+      </Abstract>
+      <AuthorList>
+        <Author>
+          <LastName>Sandborn</LastName>
+          <Initials>WJ</Initials>
+        </Author>
+        <Author>
+          <LastName>Feagan</LastName>
+          <Initials>BG</Initials>
+        </Author>
+      </AuthorList>
+    </Article>
+    <MeshHeadingList>
+      <MeshHeading>
+        <DescriptorName MajorTopicYN="Y">Crohn Disease</DescriptorName>
+      </MeshHeading>
+      <MeshHeading>
+        <DescriptorName MajorTopicYN="Y">Interleukin-23</DescriptorName>
+      </MeshHeading>
+    </MeshHeadingList>
+  </MedlineCitation>
+  <PubmedData>
+    <ArticleIdList>
+      <ArticleId IdType="pubmed">30001234</ArticleId>
+      <ArticleId IdType="doi">10.1093/ecco-jcc/jjy001</ArticleId>
+      <ArticleId IdType="pmc">PMC6001234</ArticleId>
+    </ArticleIdList>
+    <History>
+      <PubMedPubDate PubStatus="pubmed">
+        <Year>2018</Year>
+        <Month>06</Month>
+        <Day>15</Day>
+      </PubMedPubDate>
+    </History>
+  </PubmedData>
+</PubmedArticle>

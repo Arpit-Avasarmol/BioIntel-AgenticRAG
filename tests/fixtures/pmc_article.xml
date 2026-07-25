@@ -1,0 +1,46 @@
+<article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article">
+  <front>
+    <article-meta>
+      <article-id pub-id-type="pmc">7001234</article-id>
+      <article-id pub-id-type="pmid">31005678</article-id>
+      <article-id pub-id-type="doi">10.1186/s12876-019-1000-1</article-id>
+      <title-group>
+        <article-title>TL1A (TNFSF15) blockade attenuates intestinal fibrosis in experimental colitis</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Zhang</surname>
+            <given-names>Lei</given-names>
+          </name>
+        </contrib>
+      </contrib-group>
+      <permissions>
+        <license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <license-p>This article is distributed under the Creative Commons Attribution 4.0 License.</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>TL1A, encoded by TNFSF15, is a TNF-family cytokine implicated in IBD-associated fibrosis. We tested anti-TL1A therapy in a murine chronic colitis model.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec>
+      <title>Introduction</title>
+      <p>Intestinal fibrosis is a major complication of inflammatory bowel disease driven in part by TL1A-DR3 signaling.</p>
+    </sec>
+    <sec>
+      <title>Methods</title>
+      <p>Mice received a neutralizing anti-TL1A antibody or isotype control during chronic dextran sulfate sodium exposure.</p>
+    </sec>
+    <sec>
+      <title>Results</title>
+      <p>Anti-TL1A treatment reduced collagen deposition and downregulated fibrotic gene expression compared with control.</p>
+    </sec>
+    <sec>
+      <title>References</title>
+      <p>Should be skipped by the connector.</p>
+    </sec>
+  </body>
+</article>

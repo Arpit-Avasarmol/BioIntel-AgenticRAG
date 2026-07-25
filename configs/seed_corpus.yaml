@@ -1,0 +1,70 @@
+# =============================================================================
+# Seed corpus definition — a bounded, topic-focused slice across all sources.
+# Used by:  biointel ingest --config configs/seed_corpus.yaml
+#
+# The default topic below is a coherent drug-discovery theme (IL-23 / TL1A in
+# inflammatory bowel disease) so that literature, trials, drugs/targets and
+# patents all overlap and the agent can reason + cross-reference across sources.
+# Change `topic` / per-source queries to build any other knowledge base.
+# =============================================================================
+
+topic: "IL-23 and TL1A inhibitors in inflammatory bowel disease"
+
+# Global safety cap so a demo ingest never runs away.
+max_records_per_source: 300
+
+sources:
+  pubmed:
+    enabled: true
+    query: '(inflammatory bowel disease) AND (IL-23 OR TL1A OR ustekinumab OR risankizumab) AND (2018:2025[pdat])'
+    max_records: 200
+
+  pmc:
+    enabled: true
+    # PMC Open Access subset only. Same theme; full text where OA license allows.
+    query: '(inflammatory bowel disease) AND (IL-23 OR TL1A) AND open access[filter]'
+    max_records: 60
+
+  clinicaltrials:
+    enabled: true
+    conditions:
+      - "Inflammatory Bowel Disease"
+      - "Crohn Disease"
+      - "Ulcerative Colitis"
+    query_terms: "IL-23 OR TL1A OR ustekinumab OR risankizumab OR mirikizumab"
+    statuses:
+      - RECRUITING
+      - ACTIVE_NOT_RECRUITING
+      - COMPLETED
+    max_records: 150
+
+  chembl:
+    enabled: true
+    # Resolve these target gene symbols to ChEMBL targets, then pull bioactivities.
+    targets:
+      - IL23A
+      - IL12B
+      - TNFSF15   # TL1A
+    max_records: 150
+
+  opentargets:
+    enabled: true
+    # EFO/MONDO disease IDs to pull target-disease associations + known drugs.
+    diseases:
+      - EFO_0003767   # inflammatory bowel disease
+      - MONDO_0005011 # Crohn disease
+      - MONDO_0005101 # ulcerative colitis
+    max_targets: 50
+
+  patentsview:
+    enabled: true
+    query_text: "IL-23 antibody inflammatory bowel disease"
+    date_from: "2015-01-01"
+    max_records: 100
+
+  google_patents:
+    # OPTIONAL — requires GCP creds (GOOGLE_APPLICATION_CREDENTIALS + GCP_PROJECT_ID).
+    # Disabled by default; PatentsView is the no-auth patents source.
+    enabled: false
+    query_text: "IL-23 antibody inflammatory bowel disease"
+    max_records: 100

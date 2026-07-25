@@ -1,0 +1,17 @@
+{
+  "patent_id": "10344093",
+  "patent_title": "Anti-IL-23 antibodies and methods of use for treating inflammatory bowel disease",
+  "patent_abstract": "Disclosed are monoclonal antibodies that specifically bind the p19 subunit of human IL-23 and their use in treating inflammatory bowel disease, including Crohn's disease and ulcerative colitis.",
+  "patent_date": "2019-07-02",
+  "assignees": [
+    { "assignee_organization": "Janssen Biotech, Inc." }
+  ],
+  "inventors": [
+    { "inventor_name_last": "Smith", "inventor_name_first": "John" },
+    { "inventor_name_last": "Doe", "inventor_name_first": "Jane" }
+  ],
+  "cpc_current": [
+    { "cpc_group_id": "C07K16/244" },
+    { "cpc_group_id": "A61P1/00" }
+  ]
+}

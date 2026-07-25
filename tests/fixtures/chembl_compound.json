@@ -1,0 +1,12 @@
+{
+  "molecule_chembl_id": "CHEMBL2109101",
+  "pref_name": "USTEKINUMAB",
+  "target_symbol": "IL12B",
+  "target_chembl_id": "CHEMBL1795177",
+  "target_name": "Interleukin-12 subunit beta",
+  "activities": [
+    { "type": "Kd", "value": "0.23", "units": "nM", "assay": "Binding affinity to IL-12/23 p40 subunit" },
+    { "type": "IC50", "value": "1.4", "units": "nM", "assay": "Inhibition of IL-23 signaling in cell-based assay" },
+    { "type": "IC50", "value": "2.1", "units": "nM", "assay": "Neutralization assay" }
+  ]
+}
